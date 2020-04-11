@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header> <!-- this is the menu bar at the top of the page -->
+      <a href="index.html" class="header-brand">Neonlight117</a>
+      <nav>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="cases.html" class="header-cases">Cases</a>
+      </nav>
+    </header>
+    <main>
+      <div class="wrapper">
+        <h2 class="form-links-h2">Form</h2>
+      </div>
+
+
+      <form action="contactform.py" method="post"> <!-- "action" tells the program where to send the information after the user pushes the "submit" button; if you have sensitive data like a password, do not choose "get" for "method", instead use "post", get has a 3000 character limit, but post does not-->
+        <input type="text" name="email" placeholder="type email here...">
+        <input type="password" name="pwd" placeholder="Password">
+        <input type="text" name="address" value="This is your address">
+        Male:<input type="radio" name="gender" value="Male">
+        Female:<input type="radio" name="gender" value="Female">
+        Other:<input type="radio" name="gender" value="Other" checked> <!-- "checked" means there will be a default option selected. Also, don't forget to give everything the same "name" to keep them together-->
+        <textarea name="feedback" placeholder="Type your feedback here!"></textarea>
+        <select class="car" name=""> <!-- this creates a drop-down menu -->
+          <option value="none">None</option>
+          <option value="car1">Ford</option>
+          <option value="car2">Mercedes</option>
+          <option value="car3">Honda</option>
+        </select>
+        <!-- <input type="submit" name="submit"> here's an example of one way to do the "submit" button, but apparently using a button is better (see below)-->
+        <button type="submit" name="submit">Submit!</button>
+      </form>
+    </main>
+  </body>
+</html>

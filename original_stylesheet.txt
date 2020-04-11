@@ -1,0 +1,517 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*Font Families
+font-family: 'Oxanium', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Baloo Chettan 2', cursive;
+font-family: 'Josefin Sans', sans-serif;
+*/
+
+/*MY CODE*/
+
+* {
+  text-decoration: none; /*removes underline from links*/
+}
+
+main {
+  padding-top: 100px; /*sets the "main" part of the website down below the header, which is 100px. Otherwise the banner picture will be underneath the menu bar*/
+}
+
+body {
+}
+
+header {
+  position: fixed; /*the position of the menu bar stays at the top of the page, even when you scroll down*/
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 100px;
+}
+
+header .header-brand {
+  font-family: 'Oxanium', cursive;
+  font-size: 24px;
+  font-weight: 900;
+  color: #111;
+  text-transform: uppercase;
+  display: block; /*creates a block element*/
+  margin: 0 auto;
+  text-align: center; /*centers the heading*/
+  padding: 20px 0; /*adds 20px padding to top and bottom, and 0 padding to left and right */
+}
+
+header nav ul {
+  display: block;
+  margin: 0 auto;
+  width: fit-content; /*needs this in order to center because otherwise the unordered list of menu items takes up the whole length of the page, and therefore will already be "centered */"
+}
+
+header nav ul li {
+  display: inline-block; /*displays in a line*/
+  float: left; /*otherwise slight gap between links*/
+  list-style: none; /*removes underline*/
+  padding: 0 16px; /*0px top and bottom, 16px left and right, adds spacing between the menu items*/
+}
+
+header nav ul li a {
+  font-family: 'Oxanium', cursive;
+  font-size: 16px;
+  color: #111;
+  text-transform: uppercase;
+}
+
+header .header-cases {
+  display: none; /*won't display in phone version*/
+}
+
+@media only screen and (min-width: 1000px) {
+  header .header-brand {
+    margin: 31px 0;
+    text-align: left;
+    line-height: 38px;
+    padding: 0px 20px 0px 40px;
+    border-right: 3px solid #111; /*Adds a line beside the name*/
+    float: left;
+  }
+
+  header nav ul {
+    margin: 20px 0px 0px 20px;
+    float: left;
+  }
+
+  header nav ul li a {
+    line-height: 60px;
+  }
+
+  header .header-cases {
+    display: block; /*now displays in web version*/
+    font-family: 'Oxanium', cursive;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+    line-height: 38px;
+    border: 1px solid #111; /*creates a border box that makes it look like a button*/
+    float: right;
+    margin-right: 40px;
+    margin-top: 30px; /*30 = [100px banner size-(38px + 1px +1px for top and bottom border)]/2*/
+    padding: 0 20px;
+  }
+}
+
+/*Index*/
+
+.index-banner {
+  width: 100%;
+  height: calc(100vh - 100px); /*vh = view height, makes the entire height of the browser, since banner is set at 100px, we subtract that out*/
+  background-image: url('img/HK2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /*picture fits within the container, in this case shrinks it*/
+  display: table;
+}
+
+.vertical-center {  /*this puts the text in a table so that we can center it in our banner picture. This is so you don't have to use a padding, which will get messed up when you switch devices (it will always stay centered this way)*/
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.index-banner h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 40px; /*increasing spacing between lines*/
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px #111; /*good for white text on white backgrounds, 8px of blur*/
+}
+
+.index-banner h2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 60px;
+  text-transform: uppercase;
+  line-height: 70px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px #111; /*good for white text on white backgrounds, 8px of blur*/
+}
+
+
+.index-links div {
+  margin: 16px 16px 0; /*top, left/right, bottom*/
+  width: calc(100% - 32px);
+  height: 100px;
+  background-color: #f2f2f2;
+}
+
+.index-links div h3 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 100px; /*because size of box it is in is 100px*/
+  color: #111;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .wrapper {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .index-banner {
+    height: 450px;
+  }
+
+  .index-banner h1 {
+    display: block;
+    width: 560px;
+    margin: 0 auto;
+  }
+
+  .index-links {
+    overflow: hidden; /*this fixes the fact that the box cannot see what's floating around inside, and therefore doesn't add a padding to the bottom of the links*/
+  }
+
+  .index-links div {
+    margin: 20px 10px 0; /*top, left/right, bottom*/
+    height: 230px;
+    background-color: #f2f2f2;
+    float: left;
+  }
+
+  .index-boxlink-square {
+    width: calc(25% - 20px) !important; /*this overrides the previous styling*/
+  }
+
+  .index-boxlink-rectangle {
+    width: calc(50% - 20px) !important; /*this overrides the previous styling*/
+  }
+
+  .index-links div h3 {
+    line-height: 230px; /**/
+  }
+
+}
+/*CASES*/
+
+.cases-links {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.cases-links h2 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.cases-links .cases-link {
+  float: left;
+  width: 230px;
+  height: 230px;
+  margin: 20px 10px 0px;
+  background-color: #e3e3e3
+}
+
+.cases-links .cases-link p {
+  padding-top: 45%;/*pushes the text inside the square box down 45% of the way - this is another way to try to center the text within the box*/
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  color: #111;
+}
+
+/*CASE*/
+
+.case-vid h2 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #111;
+  text-align: center;
+}
+
+.case-vid iframe /*video*/ {
+  display: block;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.case-vid article h3 { /*this is the title above the three columns that says "Jumping Video"*/
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #111;
+  padding-bottom: 20px;
+}
+
+.case-vid article p {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #111;
+  column-count: 3; /*adds columns to your paragraph*/
+  column-gap: 30px;
+}
+
+/*GALLERY*/
+
+.gallery-links-h2 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.gallery-img {
+  flex-basis: 90%; /*to fit 4 across, do 23% or something a little less than 25%, to keep the pictures the same size when you change the size of your browser, just try 250px or something*/
+  margin: 10px;
+}
+
+.gallery-img img {
+  width: 100%; /*you can add this line if the picture is too big and it will shrink it down so that the 23% spacing will fit 4 in a row*/
+}
+
+@media only screen and (min-width: 762px) {
+  .gallery-links-h2 {
+    font-size: 28px;
+  }
+
+  .gallery-img {
+    flex-basis: 250px; /*to fit 4 across, do 23% or something a little less than 25%, to keep the pictures the same size when you change the size of your browser, just try 250px or something*/
+  }
+}
+
+/*ABOUT*/
+
+.form-links-h2 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+
+form {
+  width: 300px;
+}
+
+input {
+  width: 100%; /*this changes the width of the input box areas so that they stretch across the entire width of the form width indicated above (300px), otherwise they pile on top of each other*/
+}
+
+textarea {
+  /*resize: none; /*this is how you get rid of the resize triangle that appears at the bottom of the textarea "resize: none"*/
+  resize: vertical;
+  max-height: 100px; /*this limits the length someone can resize the box to*/
+}
+
+input, textarea { /*you can style two things at once using a comma!*/
+  outline: none; /*takes away the blue outline that appears whenever you select the input box*/
+  border: 1px solid #ddd;
+}
+
+input:focus, textarea:focus { /*"focus" means that you're selecting, or focusing on something. This basically means you're clicking on that box to fill something out. This is how we can change the color of the outline from the default blue to something more interesting if that's something we want to do*/
+  box-shadow: 0 0 6px rgba(255, 0, 250, 0.7);/*x-value down shadow, y-value down shadow, blur amount, color (rgba - the "a" stands for alpha value, which is transparency between 0-1)*/
+  border: 1px solid rgba(100, 0, 250);
+}
+
+::placeholder { /*unfortunately this doesn't style for microsoft edge or internet explorer, so we have to add the weird things below with the ""-ms-input" as well... we just have to do it */
+  color: rgb(0, 100, 150);
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /*this syles it for internet explorer*/
+  color: rgb(0, 100, 150);
+}
+
+::-ms-input-placeholder { /*this is for microsoft edge*/
+  color: rgb(0, 100, 150);
+  opacity: 1;
+}
+
+/*FOOTER*/
+
+footer {
+  width: calc(100% - 80px);
+  padding: 40px 40px;
+  margin-top: 20px;
+  background-color: #111;
+  overflow: hidden; /*this fixes the size of the black box - there are problems when there are lots of floats inside a box, so this resizes it so it doesn't get cut off. To see what it does, try commenting it out */
+}
+
+footer ul {
+  width: fit-content;
+  float: left;
+  padding-left: 20px;
+}
+
+footer ul li {
+  display: block;
+  list-style: none; /*removes underline*/
+}
+
+footer ul li a {
+  font-family: 'Oxanium', cursive;
+  font-size: 24px;
+  color: #fff;
+  line-height: 36px;
+}
+
+.footer-links-cases {
+  display: none;
+}
+
+.footer-socmed {  /*resizes the huge social media icon buttons and sticks them on the right side of the screen*/
+  width: 50px;
+  float: right;
+}
+
+.footer-socmed img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .footer-links-cases {
+    display: block; /*adds the footer list back in*/
+  }
+
+  footer ul {
+    padding-right: 30px;
+  }
+
+  footer ul li p {
+    font-family: 'Oxanium', cursive;
+    font-size: 24px;
+    color: #fff;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+}

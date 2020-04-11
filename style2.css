@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+#container {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom: 100px; /*height of the footer*/
+  background-color: purple;
+  height: 200px;
+}
+
+#footer {
+  background-color: #000;
+  position: relative;
+  height: 100px;
+  margin-top: -100px;
+  clear: both;
+}
+
+p {
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family: arial;
+}
+
+
+/*DROP-DOWN MENU BAR*/
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: yellow;
+}
+
+nav p {
+  font-family: arial;
+  color: #222;
+  font-size: 24px;
+  line-height: 55px;
+  float: left;
+  padding: 0px 20px;
+}
+
+nav ul {
+  float: left;
+}
+
+nav ul li {
+  float: left;
+  list-style: none; /*no bullet points after links*/
+  position: relative; /*need to have this for position absolute later*/
+}
+
+nav ul li a { /*styling text inside navigation*/
+  display: block;
+  font-family: arial;
+  color: #222;
+  font-size: 14px;
+  padding: 22px 14px;
+  text-decoration: none; /*removes underline from links*/
+}
+
+nav ul li ul { /**/
+  display: none;
+  position: absolute;
+  background: pink;
+  padding: 8px;
+  border-radius: 0px 0px 4px 4px;/*rounded corners, but not on the top left and right because that would look weird*/
+}
+
+nav ul li:hover ul { /**/
+  display: block;
+}
+
+nav ul li ul li { /**/
+  width: 180px; /*resize this if the words on the dropdown menu don't fit on one line*/
+  border-radius: 4px; /*rounded corners*/
+}
+
+nav ul li ul li a { /**/
+  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover { /**/
+  background-color: #f3f3f3;
+}
+
+/*NEONLIGHT117*/
+
+.grid {
+  display: grid; /*displays the sections as a grid*/
+  grid-template-columns: 1fr  1fr; /*1fr = one fraction, or one column inside the grid; can also use (200px, 20%, auto (fits content)) to designate size of columns*/
+  grid-template-rows: 1fr 1fr 1fr 1fr; /*1 frame for each of the title bar, header, content, and footer*/
+  grid-template-areas:
+  "title title"/*two columns, so we need to enter this in twice to go across*/
+  "header header"
+  "sidebar sidebar"
+  "content content"
+  "footer footer";
+  grid-gap: 10px; /*creates a gap around the grids*/
+}
+
+.title {
+  /*grid-column: 1 / 3; /*this basically means to start at line column 1 and end at line column 3. See https://www.youtube.com/watch?v=HgwCeNVPlo0&list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU&index=39 for more details on this*/
+  /* grid-column-start: 1; grid-column-end: 3; OR grid-column 1 / 3; OR gird-column: span 2; (which means span two columns)*/
+  /*grid-row-end: span 2; /*only seems to work if one column is selected, not two all the way across. This is supposed to move everything down*/
+  grid-area: title;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid div {
+  font-family: arial;
+  color: blue;
+}
+
+.grid div:nth-child(1) {
+  background-color: lightblue;
+}
+
+.grid div:nth-child(even) {
+  background-color: red;
+}
+
+.grid div:nth-child(2n+3) {
+  background-color: green;
+}
+
+@media screen and (min-width: 736px) {
+  .grid {
+    display: grid; /*displays the sections as a grid*/
+    grid-template-columns: 1fr 500px 500px 1fr; /*1fr = one fraction, or one column inside the grid; can also use (200px, 20%, auto (fits content)) to designate size of columns*/
+    grid-template-rows: 1fr 1fr 1fr 1fr; /*1 frame for each of the title bar, header, content, and footer*/
+    grid-template-areas:
+    ". title title ."/*two columns, so we need to enter this in twice to go across*/
+    ". sidebar header ."
+    ". sidebar content ."
+    ". sidebar footer .";
+  }
+}
+
+/*ABOUT*/
+
+table {
+  width: 400px;
+  /*border-spacing: 40px;*/
+}
+
+th, caption {
+  text-align: left;
+}
+
+table, th, td {
+  border: 1px solid #000;
+  border-collapse: collapse; /*gets rid of double-layers of table outlines*/
+  font-family: arial;
+}
+
+th, td {
+  padding: 10px;
+}
+
+caption {
+  padding-bottom: 10px;
+  font-family: arial;
+  font-size: 20px;
+}
+
+tr:nth-child(even) { /*colors all of the even rows*/
+  background-color: #fff;
+}
+
+tr:nth-child(odd) { /*colors all of the odd rows*/
+  background-color: #ddd;
+}
+
+/*PORTFOLIO*/
+
+.move-me {
+  width: 100%;
+  height: 100px;
+  background-color: blue;
+  position: -webkit-sticky;
+  position: sticky; /*relative = move it within its container; absolute = move it with respect to the entire website; FIXED = you can use this to keep a menu at the top of a website; sticky =  */
+  top: 100px;
+}
+
+.section-1 {
+  width: 100%;
+  height: 400px;
+  background-color: #ccc;
+}
+
+.section-2 {
+  width: 50%;
+  height: 1400px;
+  background-color: #aaa;
+}
